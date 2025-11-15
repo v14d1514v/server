@@ -5,6 +5,7 @@ export default new DataSource({
   type: 'better-sqlite3',
   nativeBinding: 'node_modules/better-sqlite3/build/Release/better_sqlite3.node',
   database: './data/data.sqlite',
+  synchronize: true,
   entities: [
     new EntitySchema({
       name: 'Customer',
@@ -30,6 +31,5 @@ export default new DataSource({
         orderId: {type: 'int', unsigned: true, nullable: false}
       }
     })
-  ],
-  synchronize: true
+  ]
 })
